@@ -2,7 +2,7 @@
 if(isset($_POST["submit"]))
 {
 	$input =  $_POST["input"];
-	$do= $_POST["do"];
+	$do= $_POST["do"]; 
  
 //remove special Characters
 function SpecialChar($str)
