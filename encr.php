@@ -1,20 +1,4 @@
-<?php
-if(isset($_POST["submit"]))
-{
-	$input =  $_POST["input"];
-	$do= $_POST["do"]; 
- 
-//remove special Characters
-function SpecialChar($str)
-{
-    $res = preg_replace('/[\( )\*\+\@\.\;\" "\%\^\$\&\#\!|]+/', '', $str);
-    return $res;
-}
 
-$Val = SpecialChar($input);
-//remove spaces at both ends
-$tVal = trim($Val);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +16,7 @@ $tVal = trim($Val);
 <body>
 
 <div class="city">
-<h2>London</h2>
+<h2>PHP Encryption</h2>
 <form method = "post">
  <div class="col-12">
     <input class="form-control" type="text" id="text" tabindex="22" name="input" placeholder="Input Text/Number" required>
@@ -49,13 +33,26 @@ $tVal = trim($Val);
  <br>
      <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
      </form>
-     <h3>Output:</h3>
+     <h3>Outputs:</h3>
      <?php
-    if($do == 'encrypt'){
-	//split characters to array
-$result = str_split($cVal);
+if(isset($_POST["submit"]))
+{
+	$input =  $_POST["input"];
+	$do= $_POST["do"]; 
+ 
+//remove special Characters
+function SpecialChar($str)
+{
+    $res = preg_replace('/[\( )\*\+\@\.\;\" "\%\^\$\&\#\!|]+/', '', $str);
+    return $res;
+}
 
-    foreach ($result as $char) {
+$Val = SpecialChar($input);
+//remove spaces at both ends
+$tVal = trim($Val);
+if($do == 'encrypt'){
+$result = str_split($tVal);
+foreach ($result as $char) {
 switch ($char) {
   case "a":
     $enc = 11;
@@ -138,17 +135,10 @@ switch ($char) {
 
 echo $enc;
 }
-?>
-  <h3>Array:</h3>
-<?php
-print_r($result);
-
-?>
-<?php
 }
 else{
 	//split numbers in pairs to array
-$numberOut = str_split($cVal,2);
+$numberOut = str_split($tVal,2);
 foreach ($numberOut as $num) {
 
 switch ($num) {
@@ -234,13 +224,9 @@ switch ($num) {
 echo $enc;
 }
 ?>
-  <h3>Array:</h3>
-<?php
-print_r($numberOut);
-?>
 <h3>Multiples</h3>
 <?php
-$outputswr = str_split($cVal,3);
+$outputswr = str_split($tVal,3);
 foreach($outputswr as $mult){
 	$ans = $mult * 17;
 	echo $ans."</br>";
@@ -249,7 +235,7 @@ foreach($outputswr as $mult){
 		echo "Arranged in 3142: ".$multiple[2].$multiple[0].$multiple[3].$multiple[1]."</br>";
 	}
 	}
-	echo "Combined String:"; 
+echo "Combined String:"; 
 foreach($outputswr as $mult){
 	$ans = $mult * 17;
 
@@ -262,7 +248,7 @@ foreach($outputswr as $mult){
 
 }
 ?>
-</div> 
+
 
 </body>
 </html>
