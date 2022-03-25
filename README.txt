@@ -1,3 +1,4 @@
+Simple implementation of php encryption system.
 You should have xampp installed in your PC.
 If not, download and install from: 
 https://www.apachefriends.org/download.html
