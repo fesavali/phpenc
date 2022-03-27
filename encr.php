@@ -33,7 +33,6 @@
  <br>
      <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button>
      </form>
-     <h3>Outputs:</h3>
      <?php
 if(isset($_POST["submit"]))
 {
@@ -99,9 +98,12 @@ switch ($char) {
     case "o":
     $enc = 35;
     break;
-  case "p" || "q":
+  case "p":
     $enc = 41;
     break;
+    case "q":
+      $enc = 41;
+      break;
     case "r":
     $enc = 42;
     break;
@@ -111,9 +113,12 @@ switch ($char) {
     case "t":
     $enc = 44;
     break;
-    case "u" || "v":
+    case "u":
     $enc = 45;
     break;
+    case "v":
+      $enc = 45;
+      break;
     case "w":
     $enc = 51;
     break;
@@ -188,8 +193,11 @@ switch ($num) {
     $enc = 'o';
     break;
   case "41":
-    $enc = 'p' || 'q';
+    $enc = 'p';
     break;
+    case "41":
+      $enc = 'q';
+      break;
     case "42":
     $enc = 'r';
     break;
@@ -200,8 +208,11 @@ switch ($num) {
     $enc = 't';
     break;
     case "45":
-    $enc = 'u' || 'v';
+    $enc = 'u';
     break;
+    case "45":
+      $enc = 'v';
+      break;
     case "51":
     $enc = 'w';
     break;
@@ -223,22 +234,18 @@ switch ($num) {
 
 echo $enc;
 }
-?>
-<h3>Multiples</h3>
-<?php
+
 $outputswr = str_split($tVal,3);
 foreach($outputswr as $mult){
 	$ans = $mult * 17;
-	echo $ans."</br>";
 	$multiple = str_split($ans);
 	if(count($multiple) == 4){
-		echo "Arranged in 3142: ".$multiple[2].$multiple[0].$multiple[3].$multiple[1]."</br>";
+		echo "</br>Arranged in 3142: ".$multiple[2].$multiple[0].$multiple[3].$multiple[1]."</br>";
 	}
 	}
 echo "Combined String:"; 
 foreach($outputswr as $mult){
 	$ans = $mult * 17;
-
 	echo  $ans;
 }
 }
