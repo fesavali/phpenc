@@ -22,7 +22,7 @@ $srscVal = trim($rscVal);
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Php Encryption</title>
+<title>Number and Text Encryption</title>
 
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -67,9 +67,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js">
 <div class="row" style="padding-left: 20px;padding-right: 20px; padding-top: 10px; padding-bottom: 10px; color: #fff; ">
 <div class="container">
   <div class="row">
-    <div class="col-md">
-      #
-    </div>
+   
     <div class="col-md">
    <form method = "post">
  <div class="col-12">
@@ -180,6 +178,7 @@ echo $enc;
   <h3>Array:</h3>
 <?php
 print_r($outputs);
+
 ?>
 <?php
 }
@@ -292,16 +291,16 @@ foreach($outputswr as $mult){
 
 	echo  $ans;
 }
-}
 ?>
+
 <?php
+
+}
 }
 ?>
     </div>
 
-    <div class="col-md">
-      #
-    </div>
+  
   </div>
 </div>
 </div>
